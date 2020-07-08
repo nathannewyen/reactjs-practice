@@ -1,6 +1,18 @@
 import React from "react";
 
-const Form = ({ firstName, lastName, handleFirst, handleLast, addUser }) => {
+const Form = ({
+  firstName,
+  lastName,
+  email,
+  password,
+  confirmPassword,
+  handleFirst,
+  handleLast,
+  handleEmail,
+  handlePassword,
+  handleConfirmPassword,
+  addUser,
+}) => {
   return (
     <form onSubmit={(e) => addUser(e)}>
       {/* First Name */}
@@ -31,6 +43,54 @@ const Form = ({ firstName, lastName, handleFirst, handleLast, addUser }) => {
             name="lastName"
             value={lastName}
             onChange={(e) => handleLast(e.target.value)}
+          ></input>
+        </div>
+      </div>
+
+      {/* Email */}
+      <div className="form-group row">
+        <label for="email" className="col-sm-2 col-form-label">
+          Email
+        </label>
+        <div className="col-sm-10">
+          <input
+            type="email"
+            className="form-control"
+            name="email"
+            value={email}
+            onChange={(e) => handleEmail(e.target.value)}
+          ></input>
+        </div>
+      </div>
+
+      {/* Password */}
+      <div className="form-group row">
+        <label for="pw" className="col-sm-2 col-form-label">
+          Password
+        </label>
+        <div className="col-sm-10">
+          <input
+            type="password"
+            className="form-control"
+            name="password"
+            value={password}
+            onChange={(e) => handlePassword(e.target.value)}
+          ></input>
+        </div>
+      </div>
+
+      {/* Confirm Password */}
+      <div className="form-group row">
+        <label for="confirm-pw" className="col-sm-2 col-form-label">
+          Confirm Password
+        </label>
+        <div className="col-sm-10">
+          <input
+            type="password"
+            className="form-control"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => handleConfirmPassword(e.target.value)}
           ></input>
         </div>
       </div>
