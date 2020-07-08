@@ -8,42 +8,11 @@ const containerStyle = {
 };
 
 function App() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [users, setUser] = useState([]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let person = {
-      fname: firstName,
-      lname: lastName,
-      email: email,
-      pw: password,
-      confirmpw: confirmPassword,
-    };
-    setUser((oldUsers) => [...oldUsers, person]);
-    setFirstName("");
-    setLastName("");
-  };
+  const [users, setUsers] = useState([]);
 
   return (
     <div className="container clearfix" style={containerStyle}>
-      <Form
-        firstName={firstName}
-        lastName={lastName}
-        email={email}
-        password={password}
-        confirmPassword={confirmPassword}
-        handleFirst={setFirstName}
-        handleLast={setLastName}
-        handleEmail={setEmail}
-        handlePassword={setPassword}
-        handleConfirmPassword={setConfirmPassword}
-        addUser={handleSubmit}
-      />
+      <Form handleUser={setUsers} />
       {users.map((user, idx) => {
         return (
           <UserInfo
