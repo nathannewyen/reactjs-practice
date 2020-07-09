@@ -11,7 +11,6 @@ const Form = (props) => {
       height: height + "px",
     };
     props.handleBlock((a) => [...a, newBlocks]);
-    console.log("a block added");
     setColor("");
     setWidth(0);
     setHeight(0);
@@ -22,36 +21,35 @@ const Form = (props) => {
       className="jumbotron d-flex flex-column"
     >
       <div className="form-group row">
-        <label htmlFor="color"> Color: </label>{" "}
+        <label htmlFor="color"> Color: </label>
         <input
           type="text"
           name="color"
           value={color}
           onChange={(e) => setColor(e.target.value)}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <div className="form-group row">
-        <label htmlFor="width"> Width: </label>{" "}
+        <label htmlFor="width"> Width: </label>
         <input
           type="text"
           name="width"
           value={width}
           onChange={(e) => setWidth(e.target.value)}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <div className="form-group row">
-        <label htmlFor="height"> Height: </label>{" "}
+        <label htmlFor="height"> Height: </label>
         <input
           type="text"
           name="height"
           value={height}
           onChange={(e) => setHeight(e.target.value)}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <button type="submit" className="btn btn-dark">
-        {" "}
-        Generate{" "}
-      </button>{" "}
+        Generate
+      </button>
     </form>
   );
 };
