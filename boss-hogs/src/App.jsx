@@ -11,6 +11,8 @@ function App() {
   const [colorVal, setColorVal] = useState("");
   const [numbEmployeesVal, setNumbEmployeesVal] = useState("");
 
+  const [search, setSearch] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -58,6 +60,16 @@ function App() {
   return (
     <div className="App">
       <div className="row justify-content-around">
+        <div className="col-3 mx-auto">
+          <label htmlFor="search">Search</label>
+          <input
+            type="text"
+            className="form-control"
+            name="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
         <form action="" className="col-5" onSubmit={(e) => handleSubmit(e)}>
           <h2> Add Boss Hogs: </h2>
           <div className="form-group">
