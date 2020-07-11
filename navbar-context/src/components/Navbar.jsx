@@ -1,12 +1,11 @@
 import React from "react";
 
 const Navbar = (props) => {
+  const {name} = props;
   return (
-    <nav className="navbar navbar-light bg-light">
       <a className="navbar-brand" href="#!">
-        Navbar
+      Hi  {name}
       </a>
-    </nav>
   );
 };
 
